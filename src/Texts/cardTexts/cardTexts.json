@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "create a theme",
+      "content": "<p style='text-align : center'>Create an inspirational theme.</br>It can litteraly be anything.</p><p><span class='big'>Feed</span> it with inspirations & watch it grow.</p>"
+      
+    },
+    {
+      "id": 2,
+      "title": "add inspiration",
+      "content": "<p style='text-align : center'>Add pictures, raw ideas, lines of text interest, anything that pops in your mind and that may add up.</p>"
+    },
+    {
+      "id": 3,
+      "title": "share a theme",
+      "content": "<p style='text-align : center'>Once the team is satisfied, export the document as a creative brief for communication purpose.</p>"
+    },
+    {
+      "id": 4,
+      "title": "finalize & export",
+      "content": "<p style='text-align : center'>Invite users to participate and grow the theme together.</p><br/><p style='text-align : center'>any member of the theme can add pictures, text, colors or fabrics.</p>"
+    }
+  ]
