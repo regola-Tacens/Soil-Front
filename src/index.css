@@ -509,7 +509,7 @@ body {
 }
 
 .signup{
-  padding : 35px;
+  padding : 20px;
   width : 500px;
   background-color: var(--light-gry);
   border-radius: 40px 0 40px 0;
@@ -671,7 +671,16 @@ body {
 }
 
 
-
+.arrow {
+  position : absolute;
+  pointer-events: none;
+  z-index:400;
+  top : 10px;
+  right : 10px;
+  width : 12px;
+  height: 12px;
+  /* background-color: var(--light-gry); */
+} 
 
 .goButton {
   cursor: pointer;
@@ -738,7 +747,7 @@ body {
 
 .themeinfos{
   padding : 2em 2em 1em 2em;
-  /* background: var(--light-gry); */
+  position : relative;
   width : 100%;
   display : flex;
   flex-direction: column;
@@ -747,6 +756,7 @@ body {
 
 .themeinfos .themeDesc {
   /* flex: 1; */
+  
   height: 100px;
   overflow: hidden;
 }
@@ -811,6 +821,8 @@ body {
 .pictureForm {
   width : 100%;
   margin : 0 auto;
+  margin-bottom: 1em;
+  
   display: flex;
   justify-content: center;
   align-items:center ;
@@ -822,15 +834,40 @@ body {
 
 }
 .pictureDetailHeader {
+  position : relative;
   display : flex;
   flex-direction: row;
+  align-items: flex-start;
+  width : 100%;
+  background-size : 'contain';
+  overflow : hidden;
 }
+
+/* .themeContainer .headerImage{
+
+  padding : 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width : 100%;
+  background-size : 'contain';
+  z-index: 2;
+  flex: 1 ;
+  overflow : hidden;
+  border-radius: 30px 0 30px 0 ;
+
+} */
+
+
 
 .pictureDetailHeader img {
   width : 50vw;
+  margin : 0.3em;
 }
 .pictureDetailHeader .infos {
+  margin : 0.3em;
   width : 30vw;
+  padding : 0 2em;
   background-color: var(--light-gry);
 }
 
@@ -877,7 +914,7 @@ body {
   margin: 1em auto;
   max-width : 800px;
   padding : 2em 6em 0em 6em;
-  /* background: var(--light-gry); */
+  background: var(--light-gry);
   border-radius: 30px 0 30px 0 ;
   /* box-shadow: 6px 6px 7px 1px rgba(0,0,0,0.6); */
 }

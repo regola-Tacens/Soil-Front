@@ -18,4 +18,6 @@ export const eraseTheme = (id)=> API.delete(`/theme/eraseTheme/${id}`)
 
 export const createPicture = (picture) => API.post('/picture/createPicture', picture)
 export const fetchPictures = (themeId) => API.get(`/picture/fetchPictures/${themeId}`)
+export const updatePicture = (picture, id) => API.post(`/picture/updatePicture/${id}`, picture)
+export const erasePicture = (id) => API.delete(`/picture/erasePicture/${id}`)
 export const erasePicturesLinked = (themeId) => API.delete(`/picture/erasePicturesLinked/${themeId}`)

@@ -4,13 +4,12 @@ import FileBase64 from 'react-file-base64'
 import { useDispatch } from 'react-redux'
 import { createTheme, updateTheme } from '../../actions/themes'
 import closeCross from '../../images/pictos/cross.svg'
-import { useHistory } from 'react-router'
+
 
 let initialState = { themeName :'', creator:'', description : '', headerImg : '' }
 
 export default function FormTheme({setShowForm, themeToUpdate}) {
     const [theme, setTheme] = useState( themeToUpdate || initialState)
-    const history = useHistory()
     const dispatch=useDispatch()
     const handleSubmit =(e)=> {
         e.preventDefault()

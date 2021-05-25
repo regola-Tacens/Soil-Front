@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import closeCross from '../../../images/pictos/cross.svg'
+import arrow from '../../../images/pictos/arrow.svg'
 import FormTheme from '../FormTheme'
 import { eraseTheme } from '../../../actions/themes'
 
@@ -58,7 +59,11 @@ export default function Theme({theme}) {
             
             <Link to={{ pathname:"/themepage", props : {theme}}} >
                 {theme?._id &&          
-                <div className="goToTheme" id={`go${theme._id}`}></div>}            
+                
+                <div className="goToTheme" id={`go${theme._id}`}></div>}     
+                <div className="arrow">
+                    <img src={arrow} alt="arrow" />
+                </div>       
                 <div className="goButton" id='goButton' 
                 onMouseOver={mouseOverGoButton} 
                 onMouseLeave={mouseLeaveGoButton}></div>

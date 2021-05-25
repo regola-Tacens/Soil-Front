@@ -6,7 +6,7 @@ import GradientButton from '../UI/GradientButton'
 import FormTheme from './FormTheme'
 import Theme from './Theme/Theme'
 import LogoSoilLarge from '../../images/pictos/LogoSoilLarge.svg'
-import Zigzag from '../../images/pictos/zigzag.svg'
+
 
 
 
@@ -33,8 +33,7 @@ export default function Themes() {
         <div className='themesHeader'>
             <img src={LogoSoilLarge} className='logoSoilLarge' alt='logoLarge'/>
             <div className='heroSubTitle'>SELECT A THEME</div>
-            {/* <img className='zigzag' src={Zigzag} alt='zigzag'></img> */}
-            {/* <div className='overlineRed'></div> */}
+
             <GradientButton buttonName={'create a new theme'} clickAction={handleCloseForm} />
             {/* <div className='lowercaseBodyText toggleCreateTheme' onClick={()=>setShowForm(prevState => !prevState)}>{showForm ? 'close the window' : 'create a new theme'}</div> */}
             

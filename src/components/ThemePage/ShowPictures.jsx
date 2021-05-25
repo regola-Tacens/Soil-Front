@@ -25,13 +25,13 @@ export default function ShowPictures({themeId, themeDescription,showForm,  setSh
     return (
         <div>
             <div className='pictureContainer'>
-                { !pictureId && <div className="themeDescription lowercaseBodyText">{ themeDescription } <div className="underline"></div></div>}
-                {!pictureId && <GradientButton buttonName={'add picture'} clickAction={ handleCloseForm }/>}
+                { !pictureId && <div className="themeDescription lowercaseBodyText" style={{ paddingBottom : '2em'}}>{ themeDescription } </div>}
+                {!pictureId && <GradientButton buttonName= {showForm ? 'close window' : 'add picture'} clickAction={ handleCloseForm }/>}
                 <div className="pictureForm"> {showForm && <PictureForm setShowForm={setShowForm} themeId={themeId} /> }</div>
                 <div className="pictures">
                     {pictures && !pictureId &&
                         pictures.map(picture =>
-                        (<Picture picture={picture} pictureId={pictureId} setPictureId = { setPictureId } />))
+                        (<Picture picture={picture} pictureId={pictureId} setPictureId={ setPictureId } key={picture._id} />))
                     }
                 </div>    
                 <div className="pictureDetail">

@@ -1,17 +1,16 @@
 import React from 'react'
+import arrow from '../../images/pictos/arrow.svg'
 
 
 export default function Picture({picture, pictureId, setPictureId}) {
     
 
     const handlePictureClick =()=> {
-        console.log('picture id', picture._id)
         setPictureId(picture._id)
     }
 
     const mouseOverGoButton = (e)=> {
         const goButton = document.getElementById(`go${picture._id}`)
-        console.log(goButton)
         goButton.classList.add('goToTheme')
         goButton.innerHTML = `${picture.pictureName}`
     }
@@ -25,7 +24,10 @@ export default function Picture({picture, pictureId, setPictureId}) {
     return (
         <div className="pictureImage">
            
-                {picture?._id &&  <div className="goToTheme" id={`go${picture._id}`}></div>}            
+                {picture?._id &&  <div className="goToTheme" id={`go${picture._id}`}></div>}       
+                <div className="arrow">
+                    <img src={arrow} alt="arrow" />
+                </div>          
                 <div className="goButton" id='goButton' 
                 onMouseOver={mouseOverGoButton} 
                 onMouseLeave={mouseLeaveGoButton}

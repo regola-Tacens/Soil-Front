@@ -34,7 +34,7 @@ export default function ThemePage({props}) {
         <div className='themesHeader'>
             <img src={LogoSoilLarge} className='logoSoilLarge' alt='logoLarge'/>
             <div className='heroSubTitle'>{themeName}</div>
-            <Link to='/themes'className="back"><div >back to themes</div></Link>
+            <Link to='/themes' className="themePageButton back"><div >back to themes</div></Link>
             { themeId && <ShowPictures themeId={themeId} showForm={showForm} themeDescription={themeDescription} setShowForm={setShowForm}/>}   
         </div>
     )
