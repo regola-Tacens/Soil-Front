@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import PictureForm from './PictureForm'
 import { erasePicture } from '../../actions/picture'
+import ImageTagger from './ImageTagger'
 
 export default function PictureDetail({ pictureId, setPictureId }) {
     const dispatch = useDispatch()
@@ -26,7 +27,8 @@ export default function PictureDetail({ pictureId, setPictureId }) {
     return (
         <div>
             <div className="pictureDetailHeader">
-                <img src={picture?.img} style={{ objectFit : 'contain'}} alt="pictureName"  />
+                <ImageTagger src={picture?.img} pictureId={picture?._id} />
+                {/* <img src={picture?.img} style={{ objectFit : 'contain'}} alt="pictureName"  /> */}
                 <div className="infos">
                     <h1 className="themeSubTitle">{picture?.pictureName}</h1>
                     <p className="lowercaseBodyText">{picture?.description}</p>
