@@ -7,8 +7,10 @@ export default (tags =[], action) => {
             return [...tags, action.payload]
 
         case 'FETCH_ALL_TAGS' :
-            console.log(action.payload)
             return action.payload
+
+        case 'ERASE_TAG' : 
+            return tags.filter(tag => tag._id !== action.payload )
 
         default :
             return tags

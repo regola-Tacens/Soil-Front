@@ -929,7 +929,6 @@ body {
   z-index: 100;
   padding : 7px 7px;
   border-radius: 10px;
-  border : 2px solid black;
   position : absolute;
   background-color: var(--light-gry);
   font-size: 13px;

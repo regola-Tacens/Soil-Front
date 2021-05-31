@@ -4,6 +4,7 @@ export default (pictures =[], action) => {
         case 'CREATE_PICTURE' : 
             return [...pictures, action.payload]
 
+        case 'UPDATED_TAGS_IN_PICTURE' : 
         case 'UPDATE_PICTURE':
             return pictures.map(picture => (
                 picture._id === action.payload._id ? action.payload : picture

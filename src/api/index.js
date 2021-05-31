@@ -22,5 +22,8 @@ export const updatePicture = (picture, id) => API.post(`/picture/updatePicture/$
 export const erasePicture = (id) => API.delete(`/picture/erasePicture/${id}`)
 export const erasePicturesLinked = (themeId) => API.delete(`/picture/erasePicturesLinked/${themeId}`)
 export const fetchAllTags = (pictureId) => API.get(`/picture/${pictureId}/fetchAllTags`)
+export const eraseTagInPicture = (tagId, pictureId) => API.post(`picture/eraseTagInPicture/${pictureId}`, tagId)
+
+export const eraseTag = (tagId) => API.delete(`tag/eraseTag/${tagId}`, eraseTag)
 
 export const createTag = (currentTag)=> API.post('/tag/createTag', currentTag)

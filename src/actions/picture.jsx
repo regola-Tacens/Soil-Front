@@ -57,6 +57,21 @@ export const erasePicturesLinked = (themeId) => async ( dispatch ) => {
 
 
 
+export const eraseTagInPicture = (tagId, pictureId) => async ( dispatch ) => {
+
+    try {
+        const { data } =  await api.eraseTagInPicture(tagId, pictureId) 
+        dispatch({type:'UPDATED_TAGS_IN_PICTURE', payload : data })
+    } catch (err) {
+        console.log ('on a une erreur :', err)
+    }
+}
+
+
+
+
+
+
 
 
 
