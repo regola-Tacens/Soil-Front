@@ -1,27 +1,40 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { createTag} from '../../actions/tags'
+import { fetchAllTags } from '../../actions/tags'
+
 import Tag from './Tag'
 
 export default function ImageTagger({ src,pictureId }) {
-    const [tags, setTag] = useState([])
+    const dispatch = useDispatch()
+    const tags = useSelector((state) =>state.tag)
 
-    const createTag = async (e) => {
-        let tag = await window.prompt("write your tag")
+
+    useEffect(()=> {
+        dispatch(fetchAllTags(pictureId))
+    },[])
+
+    const handleCreateTag = async (e) => {
+        let tagMessage = await window.prompt("write your tag")
         const  { clientX, clientY, target } = e
         const { x, y, width, height } = target.getBoundingClientRect();
-        setTag(state => [
-            ...state, {
-                posX: ((clientX - x) *100) / width,
-                posY: ((clientY - y) *100 )/ height,
-                message: tag,
-                id:Math.random() * (clientX+clientY),
-                targetWidth : target.width
-            }
-        ])
+
+        const currentTag = {
+            posX: ((clientX - x) *100) / width,
+            posY: ((clientY - y) *100 )/ height,
+            message: tagMessage,
+        }
+        dispatch( createTag (currentTag, pictureId))
     }
+
+    
+
     return (
         <div style={{ position : 'relative'}}>
-            <img src={src} style={{ objectFit : 'contain'}} alt="pictureName" id={pictureId} onClick={ createTag }  />
-            {tags?.map(tag => <Tag tag={tag} pictureId={pictureId} key={tag.id}/>)}
+            <img src={src} style={{ objectFit : 'contain'}} alt="pictureName" id={pictureId} onClick={ handleCreateTag } />
+           { pictureId &&
+            tags?.map(tag => <Tag tag={tag} pictureId={pictureId} key={tag._id}/>)
+            }
         </div>
     )
 }

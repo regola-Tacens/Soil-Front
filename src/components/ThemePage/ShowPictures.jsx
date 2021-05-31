@@ -35,9 +35,10 @@ export default function ShowPictures({themeId, themeDescription,showForm,  setSh
                     }
                 </div>    
                 <div className="pictureDetail">
-                    {pictureId && <PictureDetail pictureId={pictureId} setPictureId = { setPictureId }/>}
+                     { pictureId && <PictureDetail pictureId={pictureId} setPictureId = { setPictureId }/>}
                 </div>
             </div>
+           PICTUREID :  {pictureId}
         </div>
     )
 }

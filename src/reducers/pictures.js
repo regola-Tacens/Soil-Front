@@ -17,8 +17,8 @@ export default (pictures =[], action) => {
 
             
         case 'ERASE_PICTURES_LINKED' : 
-        console.log('received in reducer themeID', action)
-        return pictures.filter((picture)=> picture.themeLinked !== action.payload)
+            return pictures.filter((picture)=> picture.themeLinked !== action.payload)
+        
 
 
         default :

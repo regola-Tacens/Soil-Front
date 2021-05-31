@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import PictureForm from './PictureForm'
@@ -12,13 +12,14 @@ export default function PictureDetail({ pictureId, setPictureId }) {
     const picture = pictures.find(picture =>picture._id === pictureId )
     const[showForm, setShowForm] = useState(false)
 
+    
     const updatePicture =(e)=> {
         e.preventDefault()
         setShowForm(previousState => !previousState)
         
     }
 
-    const handleErasePicture =async (e)=> {
+    const handleErasePicture = async (e)=> {
         e.preventDefault()
         await dispatch( erasePicture (picture._id))
         setPictureId(null)
@@ -27,7 +28,9 @@ export default function PictureDetail({ pictureId, setPictureId }) {
     return (
         <div>
             <div className="pictureDetailHeader">
-                <ImageTagger src={picture?.img} pictureId={picture?._id} />
+                {picture ?
+                <ImageTagger src={picture?.img} pictureId={picture?._id} /> : null
+                }
                 {/* <img src={picture?.img} style={{ objectFit : 'contain'}} alt="pictureName"  /> */}
                 <div className="infos">
                     <h1 className="themeSubTitle">{picture?.pictureName}</h1>

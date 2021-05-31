@@ -7,6 +7,7 @@ export default function Picture({picture, pictureId, setPictureId}) {
 
     const handlePictureClick =()=> {
         setPictureId(picture._id)
+        
     }
 
     const mouseOverGoButton = (e)=> {
@@ -24,7 +25,7 @@ export default function Picture({picture, pictureId, setPictureId}) {
     return (
         <div className="pictureImage">
            
-                {picture?._id &&  <div className="goToTheme" id={`go${picture._id}`}></div>}       
+                {picture._id &&  <div className="goToTheme" id={`go${picture._id}`}></div>}       
                 <div className="arrow">
                     <img src={arrow} alt="arrow" />
                 </div>          

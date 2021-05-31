@@ -929,21 +929,22 @@ body {
   z-index: 100;
   padding : 7px 7px;
   border-radius: 10px;
+  border : 2px solid black;
   position : absolute;
-  background-color: blueviolet;
+  background-color: var(--light-gry);
   font-size: 13px;
   max-width : 200px;
 }
 
 .growLeft {
-  padding : 2px 15px;
+  padding : 3px 20px;
   border-radius: 10px;
   transform-origin: 50% 50%;
 
 }
 
 .growRight {
-  padding : 2px 15px;
+  padding : 3px 20px;
   border-radius: 10px;
   transform-origin: 90% 50%;
   transform : translate(-80%,0);

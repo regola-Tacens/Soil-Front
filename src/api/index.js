@@ -21,3 +21,6 @@ export const fetchPictures = (themeId) => API.get(`/picture/fetchPictures/${them
 export const updatePicture = (picture, id) => API.post(`/picture/updatePicture/${id}`, picture)
 export const erasePicture = (id) => API.delete(`/picture/erasePicture/${id}`)
 export const erasePicturesLinked = (themeId) => API.delete(`/picture/erasePicturesLinked/${themeId}`)
+export const fetchAllTags = (pictureId) => API.get(`/picture/${pictureId}/fetchAllTags`)
+
+export const createTag = (currentTag)=> API.post('/tag/createTag', currentTag)
